@@ -1,0 +1,20 @@
+#rdnum{
+    display:flex
+}
+
+#btn1{
+    margin-left: 300px;
+    margin-top: -75px;
+}
+.number1{
+    margin-left: 300px;
+    margin-top: -75px;
+}
+
+#btn3{
+    margin-left: 300px;
+}
+.number3{
+    margin-left: 300px;
+    margin-top: -75px;
+}

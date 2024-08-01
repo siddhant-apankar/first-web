@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+    display: inline;
+}
+#rdnum1{
+  
+}  
+
+</style>
+</head>
+<body style="display: inline;">
+
+
+
+   <div id=" rdnum">
+   <p>Number: <span class="number">0</span></p>
+   <button id="btn">Generate Number</button>
+   </div>
+
+  <div id="rdnum1">
+    <p>Another Number: <span class="number1">0</span></p>
+  <button id="btn1" disabled>Generate Another Number</button>
+</div>
+ 
+ 
+  <p>Button Clicked <span id="count">0</span> Times</p>
+
+  <script type="text/javascript">
+    document.querySelector('#btn1').disabled = true;
+
+    document.querySelector('#btn').addEventListener('click', function() {
+      let x = Math.floor(Math.random() * 10 + 1);
+      document.querySelector('.number').textContent = x;
+      document.querySelector('#btn1').disabled = false;
+      document.querySelector('#btn').disabled = true;
+      countMe();
+    });
+
+    document.querySelector('#btn1').addEventListener('click', function() {
+      let y = Math.floor(Math.random() * 10 + 1);
+      document.querySelector('.number1').textContent = y;
+      document.querySelector('#btn').disabled = false;
+      document.querySelector('#btn1').disabled = true;
+      countMe();
+
+      // Check if x equals y
+      let x = parseInt(document.querySelector('.number').textContent);
+      if (x == y) {
+        document.querySelector('#btn1').disabled = true;
+      } else {
+        document.querySelector('#btn1').disabled = false;
+      }
+    });
+
+    let count = 0;
+    function countMe() {
+      count++;
+      document.querySelector('#count').textContent = count;
+    }
+  </script>
+</body>
+</html>
